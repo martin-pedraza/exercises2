@@ -1,0 +1,18 @@
+SELECT * FROM usuario ORDER BY nombre;
+SELECT * FROM producto WHERE tipo = "solido";
+SELECT * FROM venta WHERE cantidad >= 6 AND cantidad <= 10;
+SELECT SUM(cantidad) FROM venta;
+SELECT id FROM producto ORDER BY fecha_de_creacion LIMIT 3;
+SELECT producto.nombre as producto, usuario.nombre as usuario, venta.cantidad, venta.fecha_de_venta FROM venta INNER JOIN usuario ON venta.id_usuario = usuario.id INNER JOIN producto ON venta.id_producto = producto.id;
+SELECT ROUND(venta.cantidad * producto.precio, 2) as total FROM venta INNER JOIN producto ON venta.id_producto = producto.id;
+SELECT SUM(cantidad) FROM venta WHERE venta.id_usuario = 104 AND venta.id_producto = 1003;
+SELECT venta.id_producto FROM venta INNER JOIN usuario ON venta.id_usuario = usuario.id WHERE usuario.localidad = "Avellaneda";
+SELECT * FROM usuario WHERE nombre LIKE "%u%";
+SELECT * FROM venta WHERE venta.fecha_de_venta > "2020-06-01" AND venta.fecha_de_venta < "2021-02-01";
+SELECT * FROM usuario WHERE usuario.fecha_de_registro < "2021-01-01";
+INSERT INTO producto(producto.codigo_de_barra, producto.nombre, producto.tipo, producto.stock, producto.precio, producto.fecha_de_creacion, producto.fecha_de_modificacion) VALUES ("77900311", "Chocolate", "solido", 30, 25.35, "2021-06-08", "2023-04-25");
+INSERT INTO usuario(usuario.nombre, usuario.apellido, usuario.clave, usuario.mail, usuario.fecha_de_registro, usuario.localidad) VALUES ("Mateo", "Baltazar", 1773, "mbaltaz@gmail.com", "2022-08-24", "Avellaneda");
+UPDATE producto SET producto.precio = 66.60 WHERE producto.tipo = "solido";
+UPDATE producto SET producto.stock = 0 WHERE producto.stock <= 20;
+DELETE FROM producto WHERE producto.id = 1010;*/
+DELETE FROM usuario WHERE usuario.id NOT IN(SELECT usuario.id FROM usuario INNER JOIN venta ON usuario.id = venta.id_usuario);
