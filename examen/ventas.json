@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "pedido": 100000,
+        "email": "abc@gmail.com",
+        "sabor": "chocolate",
+        "tipo": "Agua",
+        "vaso": "Cucurucho",
+        "stock": "5",
+        "fecha": "2023-05-17",
+        "imagen": null,
+        "delete": true
+    }
+]

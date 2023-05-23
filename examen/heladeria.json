@@ -1,0 +1,10 @@
+[
+    {
+        "id": 1000,
+        "sabor": "chocolate",
+        "precio": "2000",
+        "tipo": "Agua",
+        "vaso": "Cucurucho",
+        "stock": 5
+    }
+]
